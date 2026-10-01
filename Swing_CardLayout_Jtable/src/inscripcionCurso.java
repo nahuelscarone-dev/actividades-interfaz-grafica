@@ -28,7 +28,7 @@ public class inscripcionCurso extends javax.swing.JFrame {
     private void initComponents() {
 
         panelContenedor = new javax.swing.JPanel();
-        btnSiguiente = new javax.swing.JPanel();
+        panelPersonales = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         txtNombre = new javax.swing.JTextField();
         btnSiguiente1 = new javax.swing.JButton();
@@ -44,51 +44,32 @@ public class inscripcionCurso extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        panelContenedor.setLayout(new java.awt.CardLayout());
+
         jLabel1.setText("Nombre");
+        panelPersonales.add(jLabel1);
 
         txtNombre.addActionListener(this::txtNombreActionPerformed);
+        panelPersonales.add(txtNombre);
 
         btnSiguiente1.setText("Siguiente");
         btnSiguiente1.addActionListener(this::btnSiguiente1ActionPerformed);
+        panelPersonales.add(btnSiguiente1);
 
-        org.jdesktop.layout.GroupLayout btnSiguienteLayout = new org.jdesktop.layout.GroupLayout(btnSiguiente);
-        btnSiguiente.setLayout(btnSiguienteLayout);
-        btnSiguienteLayout.setHorizontalGroup(
-            btnSiguienteLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(btnSiguienteLayout.createSequentialGroup()
-                .add(19, 19, 19)
-                .add(jLabel1)
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                .add(btnSiguienteLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                    .add(btnSiguiente1)
-                    .add(txtNombre, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(252, Short.MAX_VALUE))
-        );
-        btnSiguienteLayout.setVerticalGroup(
-            btnSiguienteLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(btnSiguienteLayout.createSequentialGroup()
-                .add(30, 30, 30)
-                .add(btnSiguienteLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                    .add(jLabel1)
-                    .add(txtNombre, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                .add(35, 35, 35)
-                .add(btnSiguiente1)
-                .addContainerGap(190, Short.MAX_VALUE))
-        );
-
-        panelContenedor.add(btnSiguiente);
+        panelContenedor.add(panelPersonales, "card2");
 
         jLabel2.setText("Email:");
         panelContacto.add(jLabel2);
         panelContacto.add(txtEmail);
 
         btnAnterior2.setText("Anterior");
+        btnAnterior2.addActionListener(this::btnAnterior2ActionPerformed);
         panelContacto.add(btnAnterior2);
 
         btnSiguiente2.setText("Siguiente");
         panelContacto.add(btnSiguiente2);
 
-        panelContenedor.add(panelContacto);
+        panelContenedor.add(panelContacto, "card3");
 
         jLabel3.setText("Paso Final: Confirmar Datos");
         panelConfirmacion.add(jLabel3);
@@ -99,18 +80,9 @@ public class inscripcionCurso extends javax.swing.JFrame {
         btnConfirmar.setText("Confirmar");
         panelConfirmacion.add(btnConfirmar);
 
-        panelContenedor.add(panelConfirmacion);
+        panelContenedor.add(panelConfirmacion, "card4");
 
-        org.jdesktop.layout.GroupLayout layout = new org.jdesktop.layout.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(panelContenedor, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(panelContenedor, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
+        getContentPane().add(panelContenedor, java.awt.BorderLayout.CENTER);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -121,8 +93,16 @@ public class inscripcionCurso extends javax.swing.JFrame {
 
     private void btnSiguiente1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSiguiente1ActionPerformed
         // TODO add your handling code here:
+        java.awt.CardLayout cl = (java.awt.CardLayout) panelContenedor.getLayout();
+        cl.next(panelContenedor);
         
     }//GEN-LAST:event_btnSiguiente1ActionPerformed
+
+    private void btnAnterior2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAnterior2ActionPerformed
+        // TODO add your handling code here:
+        java.awt.CardLayout cl = (java.awt.CardLayout) panelContenedor.getLayout();
+        cl.previous(panelContenedor); // Retrocede a la carta anterior
+    }//GEN-LAST:event_btnAnterior2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -153,7 +133,6 @@ public class inscripcionCurso extends javax.swing.JFrame {
     private javax.swing.JButton btnAnterior2;
     private javax.swing.JButton btnAnterior3;
     private javax.swing.JButton btnConfirmar;
-    private javax.swing.JPanel btnSiguiente;
     private javax.swing.JButton btnSiguiente1;
     private javax.swing.JButton btnSiguiente2;
     private javax.swing.JLabel jLabel1;
@@ -162,6 +141,7 @@ public class inscripcionCurso extends javax.swing.JFrame {
     private javax.swing.JPanel panelConfirmacion;
     private javax.swing.JPanel panelContacto;
     private javax.swing.JPanel panelContenedor;
+    private javax.swing.JPanel panelPersonales;
     private javax.swing.JTextField txtEmail;
     private javax.swing.JTextField txtNombre;
     // End of variables declaration//GEN-END:variables
