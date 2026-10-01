@@ -203,15 +203,33 @@ public class JOption_JTable_practica extends javax.swing.JFrame {
         // Preguntamos a la tabla qué fila está seleccionada
         int filaSeleccionada = tblPersonas.getSelectedRow();
         
+        // Lógica de ejercicio 5
         // Si no hay fila seleccionada, entonces mostramos mensaje de advertencia
-        // Si hay fila, entonces la eliminamos pidiéndoselo al modelo
-        if(filaSeleccionada == -1)
+        // Si hay fila, entonces la eliminamos pidiéndoselo al modelo (ejercicio 5)
+       /* if(filaSeleccionada == -1)
         {
             JOptionPane.showMessageDialog(this, "Por favor, seleccione una persona de la tabla primero.", "Aviso", JOptionPane.WARNING_MESSAGE);
         } else 
         {
             modelo.removeRow(filaSeleccionada);
         }
+       */
+        if(filaSeleccionada == -1)
+        {
+            JOptionPane.showMessageDialog(this, "Por favor, seleccione una persona de la tabla primero.", "Aviso", JOptionPane.WARNING_MESSAGE);
+        }else
+        {
+            int respuesta = JOptionPane.showConfirmDialog(this, 
+                    "¿Estás seguro de que deseas eliminar esta persona?", 
+                    "Confirmar eliminación",
+                    JOptionPane.YES_NO_OPTION); // Esto hace que solo salgan los botones Yes y No
+            
+            if( respuesta == JOptionPane.YES_OPTION)
+            {
+                modelo.removeRow(filaSeleccionada);
+            }
+        }
+        
     }//GEN-LAST:event_btnEliminarActionPerformed
 
     /**
