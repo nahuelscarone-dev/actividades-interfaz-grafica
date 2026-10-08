@@ -22,3 +22,6 @@
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
 replay_pid*
+/Swing_CardLayout_Jtable/nbproject/private/
+/Swing_CardLayout_Jtable/build/
+/Swing_CardLayout_Jtable/dist/
