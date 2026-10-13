@@ -18,11 +18,17 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     public VentanaPrincipal() {
         initComponents();
         
-        // 1. Instanciamos tu diseño de Ventas en la memoria
-    PanelVentas panelVentas = new PanelVentas();
-    
-    // 2. Lo inyectamos en el JTabbedPane indicando el título de la pestaña
-    jTabbedPane1.addTab("Ventas", panelVentas);
+        // Instancias de los paneles
+        PanelVentas panelVentas = new PanelVentas();
+        PanelCompras panelCompras = new PanelCompras();
+        PanelInventario panelInventario = new PanelInventario();
+        PanelEstadisticas panelEstadisticas = new PanelEstadisticas();
+
+        // Agregar al JTabbedPane
+        jTabbedPane1.addTab("Ventas", panelVentas);
+        jTabbedPane1.addTab("Compras", panelCompras);
+        jTabbedPane1.addTab("Inventario/Stock", panelInventario);
+        jTabbedPane1.addTab("Estadísticas", panelEstadisticas);
     }
 
     /**
