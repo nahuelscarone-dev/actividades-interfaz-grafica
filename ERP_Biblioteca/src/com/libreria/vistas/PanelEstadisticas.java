@@ -299,7 +299,7 @@ public class PanelEstadisticas extends javax.swing.JPanel {
         jPanel10.setLayout(new java.awt.BorderLayout());
 
         jLabel13.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel13.setIcon(new javax.swing.ImageIcon("C:\\Users\\GZ TIENDA\\OneDrive\\Imágenes\\Screenshots\\Captura de pantalla 2026-10-13 113841.png")); // NOI18N
+        jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/libreria/recursos/estadistica1.png"))); // NOI18N
         jPanel10.add(jLabel13, java.awt.BorderLayout.CENTER);
 
         jPanel8.add(jPanel10);
@@ -309,7 +309,8 @@ public class PanelEstadisticas extends javax.swing.JPanel {
         jPanel9.setLayout(new java.awt.BorderLayout());
 
         jLabel14.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/libreria/vistas/Captura de pantalla 2026-10-13 113923.png"))); // NOI18N
+        jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/libreria/recursos/estadistica2.png"))); // NOI18N
+        jLabel14.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jPanel9.add(jLabel14, java.awt.BorderLayout.CENTER);
 
         jPanel8.add(jPanel9);
@@ -319,7 +320,7 @@ public class PanelEstadisticas extends javax.swing.JPanel {
         jPanel11.setLayout(new java.awt.BorderLayout());
 
         jLabel17.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel17.setIcon(new javax.swing.ImageIcon("C:\\Users\\GZ TIENDA\\OneDrive\\Imágenes\\Screenshots\\Captura de pantalla 2026-10-13 114020.png")); // NOI18N
+        jLabel17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/libreria/recursos/estadistica3.png"))); // NOI18N
         jPanel11.add(jLabel17, java.awt.BorderLayout.CENTER);
 
         jPanel8.add(jPanel11);
@@ -329,7 +330,7 @@ public class PanelEstadisticas extends javax.swing.JPanel {
         jPanel12.setLayout(new java.awt.BorderLayout());
 
         jLabel16.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/libreria/vistas/Captura de pantalla 2026-10-13 113743.png"))); // NOI18N
+        jLabel16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/libreria/recursos/estadistica4.png"))); // NOI18N
         jPanel12.add(jLabel16, java.awt.BorderLayout.CENTER);
 
         jPanel8.add(jPanel12);

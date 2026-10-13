@@ -43,6 +43,8 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jTabbedPane1 = new javax.swing.JTabbedPane();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setSize(new java.awt.Dimension(1280, 720));
+        setType(java.awt.Window.Type.POPUP);
         getContentPane().add(jTabbedPane1, java.awt.BorderLayout.CENTER);
 
         pack();
