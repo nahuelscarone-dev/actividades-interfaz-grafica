@@ -18,6 +18,9 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     public VentanaPrincipal() {
         initComponents();
         
+        this.setSize(1280, 720); // Tamaño exacto del marco en Figma
+        this.setLocationRelativeTo(null); // Abre la ventana centrada en el monitor
+        
         // Instancias de los paneles
         PanelVentas panelVentas = new PanelVentas();
         PanelCompras panelCompras = new PanelCompras();
@@ -47,7 +50,8 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         setType(java.awt.Window.Type.POPUP);
         getContentPane().add(jTabbedPane1, java.awt.BorderLayout.CENTER);
 
-        pack();
+        setSize(new java.awt.Dimension(1280, 720));
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     /**
