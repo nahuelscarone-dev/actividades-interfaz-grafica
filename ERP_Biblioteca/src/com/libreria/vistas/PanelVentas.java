@@ -47,10 +47,11 @@ public class PanelVentas extends javax.swing.JPanel {
         btnCancelarVenta = new javax.swing.JButton();
         btnComprobante = new javax.swing.JButton();
 
+        setBorder(javax.swing.BorderFactory.createEmptyBorder(0, 20, 0, 20));
         setPreferredSize(new java.awt.Dimension(1260, 620));
         setLayout(new java.awt.BorderLayout());
 
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setBackground(new java.awt.Color(240, 242, 245));
         jPanel1.setForeground(new java.awt.Color(255, 255, 255));
         jPanel1.setPreferredSize(new java.awt.Dimension(1280, 130));
 
@@ -64,13 +65,14 @@ public class PanelVentas extends javax.swing.JPanel {
 
         cmbClienteVenta.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Juan Aristimuño (ID: #1042)", "Item 2", "Item 3", "Item 4" }));
 
-        jLabel5.setForeground(new java.awt.Color(120, 120, 120));
-        jLabel5.setText("[Enter] para agregar ítem rápido");
+        jLabel5.setFont(new java.awt.Font("Segoe UI", 2, 11)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(100, 116, 139));
+        jLabel5.setText("Presione [F4] para realizar cobro rápido o [F2] para explorar catálogo completo.");
 
         jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(185, 28, 28));
         jLabel6.setText("Socio inhabilitado por deuda pendiente");
-        jLabel6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(248, 113, 113)));
+        jLabel6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
         jLabel6.setOpaque(true);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -84,18 +86,19 @@ public class PanelVentas extends javax.swing.JPanel {
                         .addComponent(jLabel3))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(10, 10, 10)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jLabel1)
-                                .addGap(308, 308, 308)
-                                .addComponent(jLabel5))
-                            .addComponent(txtBuscarVenta, javax.swing.GroupLayout.PREFERRED_SIZE, 680, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(50, 50, 50)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jLabel2)
-                            .addComponent(cmbClienteVenta, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, 500, Short.MAX_VALUE))))
-                .addContainerGap())
+                                .addGap(476, 476, 476))
+                            .addComponent(txtBuscarVenta, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 710, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(cmbClienteVenta, javax.swing.GroupLayout.Alignment.LEADING, 0, 500, Short.MAX_VALUE)))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -104,17 +107,19 @@ public class PanelVentas extends javax.swing.JPanel {
                 .addComponent(jLabel3)
                 .addGap(2, 2, 2)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel1)
+                        .addGap(4, 4, 4)
+                        .addComponent(txtBuscarVenta, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel2)
-                        .addComponent(jLabel5)))
-                .addGap(4, 4, 4)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtBuscarVenta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(cmbClienteVenta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel6)
-                .addContainerGap())
+                        .addGap(4, 4, 4)
+                        .addComponent(cmbClienteVenta, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(1, 1, 1)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel5)
+                    .addComponent(jLabel6))
+                .addContainerGap(31, Short.MAX_VALUE))
         );
 
         add(jPanel1, java.awt.BorderLayout.PAGE_START);
@@ -128,6 +133,11 @@ public class PanelVentas extends javax.swing.JPanel {
                 {"Don Quijote de la Mancha (Miguel de Cervantes)", "-", "4", "$300,00", "$0,00", "+"},
                 {"Cien Años de Soledad (Gabriel García Márquez)", "-", "18", "$820,00", "$0,00", "+"},
                 {"Ficciones (Jorge Luis Borges)", "-", "11", "$450,00", "$0,00", "+"},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
                 {null, null, null, null, null, null}
             },
             new String [] {
@@ -143,14 +153,14 @@ public class PanelVentas extends javax.swing.JPanel {
 
         add(jScrollPane1, java.awt.BorderLayout.CENTER);
 
-        jPanel4.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel4.setBackground(new java.awt.Color(240, 242, 245));
         jPanel4.setForeground(new java.awt.Color(255, 255, 255));
         jPanel4.setPreferredSize(new java.awt.Dimension(1280, 115));
         jPanel4.setLayout(null);
 
         jLabel8.setText("<html>Descuento aplicado: <font color='#16a34a'><b>0.0%</b></font></html>");
         jPanel4.add(jLabel8);
-        jLabel8.setBounds(1040, 10, 160, 30);
+        jLabel8.setBounds(1030, 0, 160, 30);
 
         jLabel4.setBackground(new java.awt.Color(255, 255, 255));
         jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 13)); // NOI18N
@@ -158,46 +168,46 @@ public class PanelVentas extends javax.swing.JPanel {
         jLabel4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
         jLabel4.setOpaque(true);
         jPanel4.add(jLabel4);
-        jLabel4.setBounds(640, 60, 230, 30);
+        jLabel4.setBounds(640, 60, 230, 35);
 
         btnBuscarVenta.setBackground(new java.awt.Color(226, 232, 240));
         btnBuscarVenta.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btnBuscarVenta.setForeground(new java.awt.Color(30, 41, 59));
         btnBuscarVenta.setText("F2 Buscar");
         jPanel4.add(btnBuscarVenta);
-        btnBuscarVenta.setBounds(10, 60, 120, 32);
+        btnBuscarVenta.setBounds(10, 60, 120, 35);
 
         btnConfirmarVenta.setBackground(new java.awt.Color(22, 163, 74));
         btnConfirmarVenta.setFont(new java.awt.Font("Segoe UI", 1, 13)); // NOI18N
         btnConfirmarVenta.setForeground(new java.awt.Color(255, 255, 255));
         btnConfirmarVenta.setText("CONFIRMAR VENTA");
         jPanel4.add(btnConfirmarVenta);
-        btnConfirmarVenta.setBounds(1060, 70, 153, 25);
+        btnConfirmarVenta.setBounds(1060, 60, 153, 35);
 
         jLabel7.setText("<html>Artículos en comprobante: <b>1</b> (Unidades: <b>2</b>)</html>");
         jPanel4.add(jLabel7);
-        jLabel7.setBounds(10, 10, 380, 30);
+        jLabel7.setBounds(10, 0, 380, 30);
         jPanel4.add(jSeparator1);
-        jSeparator1.setBounds(0, 0, 1490, 50);
+        jSeparator1.setBounds(0, 0, 1280, 30);
 
         btnCobroRapido.setBackground(new java.awt.Color(226, 232, 240));
         btnCobroRapido.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btnCobroRapido.setForeground(new java.awt.Color(30, 41, 59));
         btnCobroRapido.setText("F4 Cobro Rápido");
         jPanel4.add(btnCobroRapido);
-        btnCobroRapido.setBounds(140, 60, 120, 32);
+        btnCobroRapido.setBounds(140, 60, 120, 35);
 
         btnCancelarVenta.setBackground(new java.awt.Color(226, 232, 240));
         btnCancelarVenta.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btnCancelarVenta.setForeground(new java.awt.Color(30, 41, 59));
         btnCancelarVenta.setText("ESC Cancelar");
         jPanel4.add(btnCancelarVenta);
-        btnCancelarVenta.setBounds(270, 60, 120, 32);
+        btnCancelarVenta.setBounds(270, 60, 120, 35);
 
         btnComprobante.setBackground(new java.awt.Color(202, 213, 225));
         btnComprobante.setText("COMPROBANTE");
         jPanel4.add(btnComprobante);
-        btnComprobante.setBounds(890, 70, 160, 23);
+        btnComprobante.setBounds(890, 60, 160, 35);
 
         add(jPanel4, java.awt.BorderLayout.SOUTH);
     }// </editor-fold>//GEN-END:initComponents
