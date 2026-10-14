@@ -16,6 +16,8 @@ public class PanelInventario extends javax.swing.JPanel {
     public PanelInventario() {
         initComponents();
         
+        tblInventario.setDefaultEditor(Object.class, null);
+        
     }
 
     /**
@@ -26,7 +28,6 @@ public class PanelInventario extends javax.swing.JPanel {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
-        java.awt.GridBagConstraints gridBagConstraints;
 
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
@@ -104,10 +105,13 @@ public class PanelInventario extends javax.swing.JPanel {
         jPanel3.setBackground(new java.awt.Color(240, 242, 245));
         jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder("Estado stock"));
 
+        buttonGroup1.add(rbtnBajo);
         rbtnBajo.setText("Bajo");
 
+        buttonGroup1.add(rbtnAgotado);
         rbtnAgotado.setText("Agotado");
 
+        buttonGroup1.add(rbtnTodos);
         rbtnTodos.setSelected(true);
         rbtnTodos.setText("Todos");
 
@@ -203,7 +207,6 @@ public class PanelInventario extends javax.swing.JPanel {
         tblInventario.setGridColor(new java.awt.Color(204, 204, 204));
         tblInventario.setRowHeight(43);
         tblInventario.setShowGrid(true);
-        tblInventario.setShowHorizontalLines(true);
         jScrollPane2.setViewportView(tblInventario);
 
         cartaGrilla.add(jScrollPane2, java.awt.BorderLayout.CENTER);
