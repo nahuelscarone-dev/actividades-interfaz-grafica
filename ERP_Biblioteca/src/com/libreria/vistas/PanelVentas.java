@@ -72,7 +72,7 @@ public class PanelVentas extends javax.swing.JPanel {
         jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(185, 28, 28));
         jLabel6.setText("Socio inhabilitado por deuda pendiente");
-        jLabel6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
+        jLabel6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(248, 113, 113)));
         jLabel6.setOpaque(true);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);

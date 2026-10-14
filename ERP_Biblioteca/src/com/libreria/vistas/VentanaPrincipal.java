@@ -26,12 +26,21 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         PanelCompras panelCompras = new PanelCompras();
         PanelInventario panelInventario = new PanelInventario();
         PanelEstadisticas panelEstadisticas = new PanelEstadisticas();
+        
+        // Envolver todo el módulo de Estadísticas en un Scroll propio
+        javax.swing.JScrollPane scrollEstadisticas = new javax.swing.JScrollPane(panelEstadisticas);
 
         // Agregar al JTabbedPane
         jTabbedPane1.addTab("Ventas", panelVentas);
         jTabbedPane1.addTab("Compras", panelCompras);
         jTabbedPane1.addTab("Inventario/Stock", panelInventario);
-        jTabbedPane1.addTab("Estadísticas", panelEstadisticas);
+        jTabbedPane1.addTab("Estadísticas", scrollEstadisticas);
+        
+        // Hacer que la ruedita del mouse desplace suave y a buena velocidad
+        scrollEstadisticas.getVerticalScrollBar().setUnitIncrement(16);
+
+        // Desactivar el scroll horizontal para que solo suba y baje
+        scrollEstadisticas.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
     }
 
     /**
