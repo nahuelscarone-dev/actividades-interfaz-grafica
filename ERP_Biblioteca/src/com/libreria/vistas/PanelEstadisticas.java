@@ -15,6 +15,41 @@ public class PanelEstadisticas extends javax.swing.JPanel {
      */
     public PanelEstadisticas() {
         initComponents();
+
+        // 1. Impedir que el usuario pueda editar el texto de las celdas al hacer doble clic
+        tblStockCritico.setDefaultEditor(Object.class, null);
+
+        // 2. Darle ancho a la primera columna y colorear alertas/accion sin ensuciar los datos con HTML
+        tblStockCritico.getColumnModel().getColumn(0).setPreferredWidth(520);
+
+        javax.swing.table.DefaultTableCellRenderer renderizadorLimpio = new javax.swing.table.DefaultTableCellRenderer() {
+            @Override
+            public java.awt.Component getTableCellRendererComponent(javax.swing.JTable table, Object value,
+                    boolean isSelected, boolean hasFocus, int row, int column) {
+                java.awt.Component c = super.getTableCellRendererComponent(table, value, isSelected, hasFocus, row, column);
+                setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+                setFont(new java.awt.Font("Segoe UI", java.awt.Font.BOLD, 12));
+
+                if (!isSelected) {
+                    if (column == 3) {
+                        // Estilo de boton accionable para "[ Comprar ]"
+                        c.setForeground(new java.awt.Color(37, 99, 235));
+                    } else if (row == 0) {
+                        c.setForeground(new java.awt.Color(220, 38, 38)); // Rojo critico
+                    } else if (row == 1) {
+                        c.setForeground(new java.awt.Color(217, 119, 6)); // Naranja umbral
+                    } else {
+                        c.setForeground(new java.awt.Color(37, 99, 235)); // Azul reposicion
+                    }
+                }
+                return c;
+            }
+        };
+
+        for (int i = 1; i <= 3; i++) {
+            tblStockCritico.getColumnModel().getColumn(i).setCellRenderer(renderizadorLimpio);
+            tblStockCritico.getColumnModel().getColumn(i).setPreferredWidth(215);
+        }
     }
 
     /**
@@ -33,10 +68,10 @@ public class PanelEstadisticas extends javax.swing.JPanel {
         lblKpiVentasHoy = new javax.swing.JLabel();
         jPanel7 = new javax.swing.JPanel();
         lblKpiStockCritico = new javax.swing.JLabel();
-        jPanel4 = new javax.swing.JPanel();
-        lblKpiFacturacion = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         lblKpiTicketPromedio = new javax.swing.JLabel();
+        jPanel4 = new javax.swing.JPanel();
+        lblKpiFacturacion = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         lblKpiNuevosSocios = new javax.swing.JLabel();
         jPanel8 = new javax.swing.JPanel();
@@ -60,10 +95,11 @@ public class PanelEstadisticas extends javax.swing.JPanel {
 
         setBackground(new java.awt.Color(240, 242, 245));
         setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
+        setPreferredSize(new java.awt.Dimension(1220, 990));
         setLayout(new java.awt.BorderLayout(0, 15));
 
         jPanel1.setBackground(new java.awt.Color(240, 242, 245));
-        jPanel1.setPreferredSize(new java.awt.Dimension(1280, 110));
+        jPanel1.setPreferredSize(new java.awt.Dimension(1200, 80));
         jPanel1.setLayout(new java.awt.GridLayout(1, 6, 15, 0));
 
         jPanel6.setBackground(new java.awt.Color(255, 255, 255));
@@ -82,61 +118,48 @@ public class PanelEstadisticas extends javax.swing.JPanel {
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
-                .addContainerGap(28, Short.MAX_VALUE)
+            .addGroup(jPanel6Layout.createSequentialGroup()
+                .addGap(16, 16, 16)
                 .addComponent(lblKpiTotalLibros, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(32, 32, 32))
+                .addContainerGap(14, Short.MAX_VALUE))
         );
 
         jPanel1.add(jPanel6);
 
         jPanel5.setBackground(new java.awt.Color(255, 255, 255));
         jPanel5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
+        jPanel5.setLayout(new java.awt.BorderLayout());
 
         lblKpiVentasHoy.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         lblKpiVentasHoy.setForeground(new java.awt.Color(255, 133, 0));
         lblKpiVentasHoy.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblKpiVentasHoy.setText("<html><center><font size='6' color='#ea580c'><b>56</b></font><br><font color='#64748b'>Ventas hoy</font></center></html>");
-
-        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
-        jPanel5.setLayout(jPanel5Layout);
-        jPanel5Layout.setHorizontalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(lblKpiVentasHoy, javax.swing.GroupLayout.DEFAULT_SIZE, 198, Short.MAX_VALUE)
-        );
-        jPanel5Layout.setVerticalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel5Layout.createSequentialGroup()
-                .addGap(34, 34, 34)
-                .addComponent(lblKpiVentasHoy, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(26, Short.MAX_VALUE))
-        );
+        jPanel5.add(lblKpiVentasHoy, java.awt.BorderLayout.CENTER);
 
         jPanel1.add(jPanel5);
 
         jPanel7.setBackground(new java.awt.Color(254, 242, 242));
         jPanel7.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(248, 113, 113)));
+        jPanel7.setLayout(new java.awt.BorderLayout());
 
         lblKpiStockCritico.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         lblKpiStockCritico.setForeground(new java.awt.Color(255, 0, 51));
         lblKpiStockCritico.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblKpiStockCritico.setText("<html><center><font size='6' color='#dc2626'><b>13</b></font><br><font color='#dc2626'>Stock crítico</font></center></html>");
-
-        javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
-        jPanel7.setLayout(jPanel7Layout);
-        jPanel7Layout.setHorizontalGroup(
-            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(lblKpiStockCritico, javax.swing.GroupLayout.DEFAULT_SIZE, 198, Short.MAX_VALUE)
-        );
-        jPanel7Layout.setVerticalGroup(
-            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel7Layout.createSequentialGroup()
-                .addGap(33, 33, 33)
-                .addComponent(lblKpiStockCritico, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(27, Short.MAX_VALUE))
-        );
+        jPanel7.add(lblKpiStockCritico, java.awt.BorderLayout.CENTER);
 
         jPanel1.add(jPanel7);
+
+        jPanel3.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
+        jPanel3.setLayout(new java.awt.BorderLayout());
+
+        lblKpiTicketPromedio.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        lblKpiTicketPromedio.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblKpiTicketPromedio.setText("<html><center><font size='6' color='#1e293b'><b>$ 18.450</b></font><br><font color='#64748b'>Ticket promedio</font></center></html>");
+        jPanel3.add(lblKpiTicketPromedio, java.awt.BorderLayout.CENTER);
+
+        jPanel1.add(jPanel3);
 
         jPanel4.setBackground(new java.awt.Color(255, 255, 255));
         jPanel4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
@@ -154,36 +177,13 @@ public class PanelEstadisticas extends javax.swing.JPanel {
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                .addContainerGap(27, Short.MAX_VALUE)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGap(15, 15, 15)
                 .addComponent(lblKpiFacturacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(33, 33, 33))
+                .addContainerGap(15, Short.MAX_VALUE))
         );
 
         jPanel1.add(jPanel4);
-
-        jPanel3.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
-
-        lblKpiTicketPromedio.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        lblKpiTicketPromedio.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblKpiTicketPromedio.setText("<html><center><font size='6' color='#1e293b'><b>$ 18.450</b></font><br><font color='#64748b'>Ticket promedio</font></center></html>");
-
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(lblKpiTicketPromedio, javax.swing.GroupLayout.DEFAULT_SIZE, 198, Short.MAX_VALUE)
-        );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(33, 33, 33)
-                .addComponent(lblKpiTicketPromedio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(27, Short.MAX_VALUE))
-        );
-
-        jPanel1.add(jPanel3);
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
         jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
@@ -197,14 +197,17 @@ public class PanelEstadisticas extends javax.swing.JPanel {
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(lblKpiNuevosSocios, javax.swing.GroupLayout.DEFAULT_SIZE, 198, Short.MAX_VALUE)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(lblKpiNuevosSocios, javax.swing.GroupLayout.DEFAULT_SIZE, 176, Short.MAX_VALUE)
+                .addGap(16, 16, 16))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(26, Short.MAX_VALUE)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(14, 14, 14)
                 .addComponent(lblKpiNuevosSocios, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(34, 34, 34))
+                .addContainerGap(16, Short.MAX_VALUE))
         );
 
         jPanel1.add(jPanel2);
@@ -261,7 +264,7 @@ public class PanelEstadisticas extends javax.swing.JPanel {
 
         jPanel13.setBackground(new java.awt.Color(255, 255, 255));
         jPanel13.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
-        jPanel13.setPreferredSize(new java.awt.Dimension(1200, 320));
+        jPanel13.setPreferredSize(new java.awt.Dimension(1200, 295));
         jPanel13.setLayout(null);
 
         jPanel14.setBackground(new java.awt.Color(254, 243, 199));
@@ -276,28 +279,27 @@ public class PanelEstadisticas extends javax.swing.JPanel {
         btnComprarLoteCritico.setBackground(new java.awt.Color(37, 99, 235));
         btnComprarLoteCritico.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btnComprarLoteCritico.setForeground(new java.awt.Color(255, 255, 255));
-        btnComprarLoteCritico.setText("Comprar Lote Critico");
+        btnComprarLoteCritico.setText("Comprar Lote Crítico");
         jPanel14.add(btnComprarLoteCritico);
-        btnComprarLoteCritico.setBounds(965, 10, 190, 35);
+        btnComprarLoteCritico.setBounds(980, 9, 200, 36);
 
         jPanel13.add(jPanel14);
-        jPanel14.setBounds(15, 45, 1170, 55);
+        jPanel14.setBounds(15, 48, 1195, 54);
 
         tblStockCritico.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"El Retrato de Dorian Gray", "2 unidades", "Agotamiento Inminente", "Comprar"},
-                {"Don Quijote de La Mancha", "4 unidades", "Bajo Umbral Mínimo", "Comprar"},
-                {"El cuento de la Princesa Kaguya", "8 unidades", "Alerta de Reposición", "Comprar"}
+                {"El Retrato de Dorian Gray", "2 unidades", "Agotamiento Inminente", "[ Comprar ]"},
+                {"Don Quijote de La Mancha", "4 unidades", "Bajo Umbral Mínimo", "[ Comprar ]"},
+                {"El cuento de la Princesa Kaguya", "8 unidades", "Alerta de Reposición", "[ Comprar ]"}
             },
             new String [] {
-                "NOMBRE LIBRO", "CANTIDAD", "NIVEL Y ESTADO DE ALERTA", "ACCION INDIVIDUAL"
+                "Nombre Libro", "Cantidad", "Nivel y Estado de Alerta", "Acción Individual"
             }
         ));
         tblStockCritico.setFillsViewportHeight(true);
         tblStockCritico.setGridColor(new java.awt.Color(204, 204, 204));
         tblStockCritico.setRowHeight(35);
-        tblStockCritico.setShowHorizontalLines(true);
-        tblStockCritico.setShowVerticalLines(true);
+        tblStockCritico.setShowGrid(true);
         jScrollPane1.setViewportView(tblStockCritico);
         if (tblStockCritico.getColumnModel().getColumnCount() > 0) {
             tblStockCritico.getColumnModel().getColumn(2).setResizable(false);
@@ -305,26 +307,31 @@ public class PanelEstadisticas extends javax.swing.JPanel {
         }
 
         jPanel13.add(jScrollPane1);
-        jScrollPane1.setBounds(15, 140, 1170, 160);
+        jScrollPane1.setBounds(15, 148, 1195, 133);
 
-        jLabel7.setText("<html><b><font size='4'>! Libros con Stock Crítico</font></b> &nbsp;&nbsp;<font color='#dc2626'><b>[Acción requerida: 3 ítems en riesgo]</b></font></html>");
+        jLabel7.setText("<html><font size='4' color='#d97706'>&#9888;</font> <b><font size='4' color='#1e293b'>Libros con Stock Crítico</font></b> &nbsp;&nbsp;<span style='background-color: #fee2e2; color: #dc2626;'><b>&nbsp; Acción requerida (3 ítems en riesgo) &nbsp;</b></span></html>");
         jPanel13.add(jLabel7);
-        jLabel7.setBounds(15, 10, 550, 28);
+        jLabel7.setBounds(15, 12, 600, 28);
 
         btnExportarInforme.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        btnExportarInforme.setText("[PDF] Exportar informe");
+        btnExportarInforme.setText("<html><font color='#dc2626'><b>[PDF]</b></font> <b>Exportar informe</b></html>");
+        btnExportarInforme.addActionListener(this::btnExportarInformeActionPerformed);
         jPanel13.add(btnExportarInforme);
-        btnExportarInforme.setBounds(980, 10, 190, 30);
+        btnExportarInforme.setBounds(993, 10, 200, 32);
 
         jLabel9.setBackground(new java.awt.Color(241, 245, 249));
-        jLabel9.setText("<html>&nbsp;&nbsp;<b>Taxonomía de Alertas:</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color='#dc2626'><b>● Agotamiento Inminente</b> (≤ 2 un.)</font> &nbsp;&nbsp;|&nbsp;&nbsp; <font color='#d97706'><b>● Bajo Umbral Mínimo</b> (3 a 5 un.)</font> &nbsp;&nbsp;|&nbsp;&nbsp; <font color='#2563eb'><b>● Alerta de Reposición</b> (&gt; 5 un.)</font></html>");
+        jLabel9.setText("<html>&nbsp;&nbsp;<font color='#64748b'>&#9888; <b>Taxonomía de Alertas:</b></font> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color='#dc2626'>&#9679; <b>Agotamiento Inminente</b> (&le; 2 un.)</font> &nbsp;&nbsp;&nbsp;<font color='#cbd5e1'>|</font>&nbsp;&nbsp;&nbsp; <font color='#d97706'>&#9679; <b>Bajo Umbral Mínimo</b> (3 a 5 un.)</font> &nbsp;&nbsp;&nbsp;<font color='#cbd5e1'>|</font>&nbsp;&nbsp;&nbsp; <font color='#2563eb'>&#9679; <b>Alerta de Reposición</b> (&gt; 5 un.)</font></html>");
         jLabel9.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(226, 232, 240)));
         jLabel9.setOpaque(true);
         jPanel13.add(jLabel9);
-        jLabel9.setBounds(15, 106, 1170, 28);
+        jLabel9.setBounds(15, 112, 1195, 28);
 
         add(jPanel13, java.awt.BorderLayout.SOUTH);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnExportarInformeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExportarInformeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnExportarInformeActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
