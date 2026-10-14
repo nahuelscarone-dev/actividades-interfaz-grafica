@@ -69,10 +69,13 @@ public class PanelInventario extends javax.swing.JPanel {
         ));
         jScrollPane1.setViewportView(jTable1);
 
+        setBackground(new java.awt.Color(240, 242, 245));
+        setBorder(javax.swing.BorderFactory.createEmptyBorder(0, 20, 0, 20));
         setLayout(new java.awt.CardLayout());
 
         cartaGrilla.setLayout(new java.awt.BorderLayout());
 
+        jPanel1.setBackground(new java.awt.Color(240, 242, 245));
         jPanel1.setPreferredSize(new java.awt.Dimension(1280, 80));
 
         txtBuscarInventario.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
@@ -84,12 +87,12 @@ public class PanelInventario extends javax.swing.JPanel {
 
         jLabel8.setText("Tipo");
 
-        cmbTipoFiltro.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cmbTipoFiltro.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Todos los tipos", "Item 2", "Item 3", "Item 4" }));
         cmbTipoFiltro.addActionListener(this::cmbTipoFiltroActionPerformed);
 
         jLabel9.setText("Género");
 
-        cmbGeneroFiltro.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cmbGeneroFiltro.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Todos los géneros", "Item 2", "Item 3", "Item 4" }));
         cmbGeneroFiltro.addActionListener(this::cmbGeneroFiltroActionPerformed);
 
         btnAbrirModalLibro.setBackground(new java.awt.Color(22, 163, 74));
@@ -98,6 +101,7 @@ public class PanelInventario extends javax.swing.JPanel {
         btnAbrirModalLibro.setText("+ Agregar Libro");
         btnAbrirModalLibro.addActionListener(this::btnAbrirModalLibroActionPerformed);
 
+        jPanel3.setBackground(new java.awt.Color(240, 242, 245));
         jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder("Estado stock"));
 
         rbtnBajo.setText("Bajo");
@@ -136,7 +140,6 @@ public class PanelInventario extends javax.swing.JPanel {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(25, 25, 25)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel7)
                     .addComponent(txtBuscarInventario, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -150,9 +153,8 @@ public class PanelInventario extends javax.swing.JPanel {
                     .addComponent(jLabel9))
                 .addGap(18, 18, 18)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnAbrirModalLibro)
-                .addGap(56, 56, 56))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 346, Short.MAX_VALUE)
+                .addComponent(btnAbrirModalLibro, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -160,20 +162,22 @@ public class PanelInventario extends javax.swing.JPanel {
                 .addContainerGap(18, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel7)
-                            .addComponent(jLabel8)
-                            .addComponent(jLabel9))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtBuscarInventario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(cmbTipoFiltro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(cmbGeneroFiltro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(btnAbrirModalLibro)))
+                        .addComponent(btnAbrirModalLibro, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(14, 14, 14))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabel7)
+                                    .addComponent(jLabel8)
+                                    .addComponent(jLabel9))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(cmbTipoFiltro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(cmbGeneroFiltro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtBuscarInventario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(8, 8, 8))
+                            .addComponent(jPanel3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addContainerGap())))
         );
 
@@ -181,19 +185,30 @@ public class PanelInventario extends javax.swing.JPanel {
 
         tblInventario.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null}
+                {"El Retrato de Dorian Gray", "213227893", "Novela", "Misterio, Drama", "Oscar Wilde", "2 (Crítico)", "$500,00", "Editar | Baja"},
+                {"Don Quijote de La Mancha", "42364432", "Novela", "Locura, Clásico", "Miguel de Cervantes", "4", "$300,00", "Editar | Baja"},
+                {"Ficciones", "55419821", "Cuento", "Filosófico, Fantástico", "Jorge Luis Borges", "12", "$420,00", "Editar | Baja"},
+                {"Cien Años de Soledad", "10984321", "Novela", "Realismo Mágico", "Gabriel García Márquez", "18", "$650,00", "Editar | Baja"},
+                {"Rayuela", "33891045", "Novela", "Contranovela", "Julio Cortázar", "1 (Crítico)", "$580,00", "Editar | Baja"},
+                {"El Aleph", "55419904", "Cuento", "Filosófico", "Jorge Luis Borges", "9", "$450,00", "Editar | Baja"},
+                {"La Metamorfosis", "98234120", "Novela Corta", "Existencialismo", "Franz Kafka", "7", "$320,00", "Editar | Baja"},
+                {"1984", "77341902", "Novela", "Distopía", "George Orwell", "15", "$480,00", "Editar | Baja"},
+                {"Crimen y Castigo", "66219430", "Novela", "Psicológico", "Fiódor Dostoyevski", "5", "$520,00", "Editar | Baja"}
             },
             new String [] {
                 "NOMBRE", "NRO. ARTÍCULO", "TIPO", "GÉNERO", "AUTOR", "CANTIDAD STOCK", "PRECIO UNITARIO", "ACCIONES"
             }
         ));
+        tblInventario.setFillsViewportHeight(true);
+        tblInventario.setGridColor(new java.awt.Color(204, 204, 204));
+        tblInventario.setRowHeight(43);
+        tblInventario.setShowGrid(true);
+        tblInventario.setShowHorizontalLines(true);
         jScrollPane2.setViewportView(tblInventario);
 
         cartaGrilla.add(jScrollPane2, java.awt.BorderLayout.CENTER);
 
+        jPanel2.setBackground(new java.awt.Color(240, 242, 245));
         jPanel2.setPreferredSize(new java.awt.Dimension(1280, 50));
 
         jLabel11.setForeground(new java.awt.Color(153, 153, 153));
@@ -204,7 +219,7 @@ public class PanelInventario extends javax.swing.JPanel {
         btnPagAnterior.setText("<");
         btnPagAnterior.addActionListener(this::btnPagAnteriorActionPerformed);
 
-        jLabel10.setText("Página ... de ...");
+        jLabel10.setText("Página 1 de 2042");
 
         btnPagSiguiente.setText(">");
 

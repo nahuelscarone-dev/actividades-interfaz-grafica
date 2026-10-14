@@ -26,6 +26,16 @@
     <Component class="javax.swing.ButtonGroup" name="buttonGroup1">
     </Component>
   </NonVisualComponents>
+  <Properties>
+    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+      <Color blue="f5" green="f2" red="f0" type="rgb"/>
+    </Property>
+    <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+      <Border info="org.netbeans.modules.form.compat2.border.EmptyBorderInfo">
+        <EmptyBorder bottom="0" left="20" right="20" top="0"/>
+      </Border>
+    </Property>
+  </Properties>
   <AuxValues>
     <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
     <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
@@ -36,7 +46,7 @@
     <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="3"/>
     <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
     <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
-    <AuxValue name="designerSize" type="java.awt.Dimension" value="-84,-19,0,5,115,114,0,18,106,97,118,97,46,97,119,116,46,68,105,109,101,110,115,105,111,110,65,-114,-39,-41,-84,95,68,20,2,0,2,73,0,6,104,101,105,103,104,116,73,0,5,119,105,100,116,104,120,112,0,0,2,47,0,0,5,2"/>
+    <AuxValue name="designerSize" type="java.awt.Dimension" value="-84,-19,0,5,115,114,0,18,106,97,118,97,46,97,119,116,46,68,105,109,101,110,115,105,111,110,65,-114,-39,-41,-84,95,68,20,2,0,2,73,0,6,104,101,105,103,104,116,73,0,5,119,105,100,116,104,120,112,0,0,2,20,0,0,5,40"/>
   </AuxValues>
 
   <Layout class="org.netbeans.modules.form.compat2.layouts.DesignCardLayout"/>
@@ -52,6 +62,9 @@
       <SubComponents>
         <Container class="javax.swing.JPanel" name="jPanel1">
           <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="f5" green="f2" red="f0" type="rgb"/>
+            </Property>
             <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
               <Dimension value="[1280, 80]"/>
             </Property>
@@ -66,7 +79,6 @@
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="jLabel7" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="txtBuscarInventario" alignment="0" min="-2" pref="170" max="-2" attributes="0"/>
@@ -83,9 +95,8 @@
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="jPanel3" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="32767" attributes="0"/>
-                      <Component id="btnAbrirModalLibro" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="56" max="-2" attributes="0"/>
+                      <EmptySpace pref="346" max="32767" attributes="0"/>
+                      <Component id="btnAbrirModalLibro" min="-2" pref="190" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -95,24 +106,27 @@
                       <EmptySpace pref="18" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="1" attributes="0">
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="jLabel7" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel8" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel9" alignment="3" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="txtBuscarInventario" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="cmbTipoFiltro" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="cmbGeneroFiltro" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="btnAbrirModalLibro" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                              </Group>
+                              <Component id="btnAbrirModalLibro" min="-2" pref="35" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="1" attributes="0">
-                              <Component id="jPanel3" min="-2" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" alignment="1" attributes="0">
+                                      <Group type="103" groupAlignment="3" attributes="0">
+                                          <Component id="jLabel7" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jLabel8" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jLabel9" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="3" attributes="0">
+                                          <Component id="cmbTipoFiltro" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="cmbGeneroFiltro" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="txtBuscarInventario" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Component id="jPanel3" alignment="1" min="-2" max="-2" attributes="0"/>
+                              </Group>
                               <EmptySpace max="-2" attributes="0"/>
                           </Group>
                       </Group>
@@ -149,7 +163,7 @@
               <Properties>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                   <StringArray count="4">
-                    <StringItem index="0" value="Item 1"/>
+                    <StringItem index="0" value="Todos los tipos"/>
                     <StringItem index="1" value="Item 2"/>
                     <StringItem index="2" value="Item 3"/>
                     <StringItem index="3" value="Item 4"/>
@@ -172,7 +186,7 @@
               <Properties>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                   <StringArray count="4">
-                    <StringItem index="0" value="Item 1"/>
+                    <StringItem index="0" value="Todos los g&#xe9;neros"/>
                     <StringItem index="1" value="Item 2"/>
                     <StringItem index="2" value="Item 3"/>
                     <StringItem index="3" value="Item 4"/>
@@ -205,6 +219,9 @@
             </Component>
             <Container class="javax.swing.JPanel" name="jPanel3">
               <Properties>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="f5" green="f2" red="f0" type="rgb"/>
+                </Property>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
                     <TitledBorder title="Estado stock"/>
@@ -275,17 +292,8 @@
           <SubComponents>
             <Component class="javax.swing.JTable" name="tblInventario">
               <Properties>
-                <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                  <Table columnCount="8" rowCount="4">
-                    <Column editable="true" title="NOMBRE" type="java.lang.Object"/>
-                    <Column editable="true" title="NRO. ART&#xcd;CULO" type="java.lang.Object"/>
-                    <Column editable="true" title="TIPO" type="java.lang.Object"/>
-                    <Column editable="true" title="G&#xc9;NERO" type="java.lang.Object"/>
-                    <Column editable="true" title="AUTOR" type="java.lang.Object"/>
-                    <Column editable="true" title="CANTIDAD STOCK" type="java.lang.Object"/>
-                    <Column editable="true" title="PRECIO UNITARIO" type="java.lang.Object"/>
-                    <Column editable="true" title="ACCIONES" type="java.lang.Object"/>
-                  </Table>
+                <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                  <Connection code="new javax.swing.table.DefaultTableModel(&#xd;&#xa;    new Object [][] {&#xd;&#xa;        {&quot;El Retrato de Dorian Gray&quot;, &quot;213227893&quot;, &quot;Novela&quot;, &quot;Misterio, Drama&quot;, &quot;Oscar Wilde&quot;, &quot;2 (Cr&#xed;tico)&quot;, &quot;$500,00&quot;, &quot;Editar | Baja&quot;},&#xd;&#xa;        {&quot;Don Quijote de La Mancha&quot;, &quot;42364432&quot;, &quot;Novela&quot;, &quot;Locura, Cl&#xe1;sico&quot;, &quot;Miguel de Cervantes&quot;, &quot;4&quot;, &quot;$300,00&quot;, &quot;Editar | Baja&quot;},&#xd;&#xa;        {&quot;Ficciones&quot;, &quot;55419821&quot;, &quot;Cuento&quot;, &quot;Filos&#xf3;fico, Fant&#xe1;stico&quot;, &quot;Jorge Luis Borges&quot;, &quot;12&quot;, &quot;$420,00&quot;, &quot;Editar | Baja&quot;},&#xd;&#xa;        {&quot;Cien A&#xf1;os de Soledad&quot;, &quot;10984321&quot;, &quot;Novela&quot;, &quot;Realismo M&#xe1;gico&quot;, &quot;Gabriel Garc&#xed;a M&#xe1;rquez&quot;, &quot;18&quot;, &quot;$650,00&quot;, &quot;Editar | Baja&quot;},&#xd;&#xa;        {&quot;Rayuela&quot;, &quot;33891045&quot;, &quot;Novela&quot;, &quot;Contranovela&quot;, &quot;Julio Cort&#xe1;zar&quot;, &quot;1 (Cr&#xed;tico)&quot;, &quot;$580,00&quot;, &quot;Editar | Baja&quot;},&#xd;&#xa;        {&quot;El Aleph&quot;, &quot;55419904&quot;, &quot;Cuento&quot;, &quot;Filos&#xf3;fico&quot;, &quot;Jorge Luis Borges&quot;, &quot;9&quot;, &quot;$450,00&quot;, &quot;Editar | Baja&quot;},&#xd;&#xa;        {&quot;La Metamorfosis&quot;, &quot;98234120&quot;, &quot;Novela Corta&quot;, &quot;Existencialismo&quot;, &quot;Franz Kafka&quot;, &quot;7&quot;, &quot;$320,00&quot;, &quot;Editar | Baja&quot;},&#xd;&#xa;        {&quot;1984&quot;, &quot;77341902&quot;, &quot;Novela&quot;, &quot;Distop&#xed;a&quot;, &quot;George Orwell&quot;, &quot;15&quot;, &quot;$480,00&quot;, &quot;Editar | Baja&quot;},&#xd;&#xa;        {&quot;Crimen y Castigo&quot;, &quot;66219430&quot;, &quot;Novela&quot;, &quot;Psicol&#xf3;gico&quot;, &quot;Fi&#xf3;dor Dostoyevski&quot;, &quot;5&quot;, &quot;$520,00&quot;, &quot;Editar | Baja&quot;}&#xd;&#xa;    },&#xd;&#xa;    new String [] {&#xd;&#xa;        &quot;NOMBRE&quot;, &quot;NRO. ART&#xcd;CULO&quot;, &quot;TIPO&quot;, &quot;G&#xc9;NERO&quot;, &quot;AUTOR&quot;, &quot;CANTIDAD STOCK&quot;, &quot;PRECIO UNITARIO&quot;, &quot;ACCIONES&quot;&#xd;&#xa;    }&#xd;&#xa;)" type="code"/>
                 </Property>
                 <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
                   <TableColumnModel selectionModel="0">
@@ -331,6 +339,13 @@
                     </Column>
                   </TableColumnModel>
                 </Property>
+                <Property name="fillsViewportHeight" type="boolean" value="true"/>
+                <Property name="gridColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="cc" green="cc" red="cc" type="rgb"/>
+                </Property>
+                <Property name="rowHeight" type="int" value="43"/>
+                <Property name="showGrid" type="boolean" value="true"/>
+                <Property name="showHorizontalLines" type="boolean" value="true"/>
                 <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
                   <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
                 </Property>
@@ -340,6 +355,9 @@
         </Container>
         <Container class="javax.swing.JPanel" name="jPanel2">
           <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="f5" green="f2" red="f0" type="rgb"/>
+            </Property>
             <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
               <Dimension value="[1280, 50]"/>
             </Property>
@@ -417,7 +435,7 @@
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel10">
               <Properties>
-                <Property name="text" type="java.lang.String" value="P&#xe1;gina ... de ..."/>
+                <Property name="text" type="java.lang.String" value="P&#xe1;gina 1 de 2042"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JButton" name="btnPagSiguiente">
