@@ -41,7 +41,23 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
         // Desactivar el scroll horizontal para que solo suba y baje
         scrollEstadisticas.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
-    }
+        
+        // Escuchar el cambio de pestaña para actualizar el nombre del módulo en la barra inferior
+        jTabbedPane1.addChangeListener(e -> {
+            int index = jTabbedPane1.getSelectedIndex();
+            String[] modulos = {
+                "Ventas / Préstamos",
+                "Compras / Proveedores",
+                "Inventario / Catálogo",
+                "Estadísticas / Reportes"
+            };
+            if (index >= 0 && index < modulos.length) {
+                lblEstadoConexion.setText("<html><font color='#16a34a'>●</font> BD Conectada: <b>localhost:5432/libreria_db</b> &nbsp;&nbsp;|&nbsp;&nbsp; Usuario: <b>admin_inventario</b> &nbsp;&nbsp;|&nbsp;&nbsp; Módulo: <font color='#2563eb'><b>" + modulos[index] + "</b></font></html>");
+            }
+            });
+            // Disparar el texto inicial para la primera pestaña (Ventas)
+            lblEstadoConexion.setText("<html><font color='#16a34a'>●</font> BD Conectada: <b>localhost:5432/libreria_db</b> &nbsp;&nbsp;|&nbsp;&nbsp; Usuario: <b>admin_inventario</b> &nbsp;&nbsp;|&nbsp;&nbsp; Módulo: <font color='#2563eb'><b>Ventas / Préstamos</b></font></html>");
+            }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -53,15 +69,64 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private void initComponents() {
 
         jTabbedPane1 = new javax.swing.JTabbedPane();
+        pnlBarraSuperior = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
+        pnlBarraEstado = new javax.swing.JPanel();
+        lblEstadoConexion = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
         setSize(new java.awt.Dimension(1280, 720));
         setType(java.awt.Window.Type.POPUP);
+
+        jTabbedPane1.setPreferredSize(new java.awt.Dimension(1280, 678));
         getContentPane().add(jTabbedPane1, java.awt.BorderLayout.CENTER);
+
+        pnlBarraSuperior.setBackground(new java.awt.Color(30, 41, 59));
+        pnlBarraSuperior.setPreferredSize(new java.awt.Dimension(1280, 42));
+        pnlBarraSuperior.setLayout(null);
+
+        jLabel1.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 13)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/libreria/recursos/libro-modal-AltaLibro.png"))); // NOI18N
+        jLabel1.setText("Sistema Integrado de Librería & Catálogo ERP v3.4 [Empresarial]");
+        pnlBarraSuperior.add(jLabel1);
+        jLabel1.setBounds(15, 6, 650, 30);
+
+        jButton1.setBackground(new java.awt.Color(220, 38, 38));
+        jButton1.setForeground(new java.awt.Color(255, 255, 255));
+        jButton1.setText("X");
+        jButton1.addActionListener(this::jButton1ActionPerformed);
+        pnlBarraSuperior.add(jButton1);
+        jButton1.setBounds(1235, 0, 45, 42);
+
+        getContentPane().add(pnlBarraSuperior, java.awt.BorderLayout.NORTH);
+
+        pnlBarraEstado.setBackground(new java.awt.Color(226, 232, 240));
+        pnlBarraEstado.setPreferredSize(new java.awt.Dimension(1280, 26));
+        pnlBarraEstado.setLayout(null);
+
+        lblEstadoConexion.setText("<html><font color='#16a34a'>●</font> BD Conectada: <b>localhost:5432/libreria_db</b> &nbsp;&nbsp;|&nbsp;&nbsp; Usuario: <b>admin_inventario</b> &nbsp;&nbsp;|&nbsp;&nbsp; Módulo: <font color='#2563eb'><b>Sistema ERP</b></font></html>");
+        pnlBarraEstado.add(lblEstadoConexion);
+        lblEstadoConexion.setBounds(15, 3, 800, 20);
+
+        jLabel3.setText("Fila 1 seleccionada   |   INS");
+        pnlBarraEstado.add(jLabel3);
+        jLabel3.setBounds(1080, 3, 180, 20);
+
+        getContentPane().add(pnlBarraEstado, java.awt.BorderLayout.SOUTH);
 
         setSize(new java.awt.Dimension(1280, 720));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        System.exit(0);
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -89,6 +154,12 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton1;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JLabel lblEstadoConexion;
+    private javax.swing.JPanel pnlBarraEstado;
+    private javax.swing.JPanel pnlBarraSuperior;
     // End of variables declaration//GEN-END:variables
 }
