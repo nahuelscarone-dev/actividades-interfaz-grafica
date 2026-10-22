@@ -2,6 +2,8 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
+
+
 package com.libreria.vistas;
 
 /**
@@ -58,7 +60,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             // Disparar el texto inicial para la primera pestaña (Ventas)
             lblEstadoConexion.setText("<html><font color='#16a34a'>●</font> BD Conectada: <b>localhost:5432/libreria_db</b> &nbsp;&nbsp;|&nbsp;&nbsp; Usuario: <b>admin_inventario</b> &nbsp;&nbsp;|&nbsp;&nbsp; Módulo: <font color='#2563eb'><b>Ventas / Préstamos</b></font></html>");
             }
-
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always

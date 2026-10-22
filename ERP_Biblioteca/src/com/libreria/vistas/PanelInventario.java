@@ -19,6 +19,11 @@ public class PanelInventario extends javax.swing.JPanel {
         tblInventario.setDefaultEditor(Object.class, null);
         
     }
+    
+    
+    public javax.swing.JTable getTblInventario() {
+    return tblInventario;
+}
 
     /**
      * This method is called from within the constructor to initialize the form.
