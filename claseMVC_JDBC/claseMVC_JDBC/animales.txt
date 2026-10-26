@@ -1,0 +1,6 @@
+Tigre;Shere Khan;6;60;HERIDO
+Zorro;Robin;2;100;SALUDABLE
+Aguila;Apolo;5;75;SALUDABLE
+Loro;Pancho;8;100;SALUDABLE
+Lobo;Fenrir;3;100;SALUDABLE
+GatoMontes;Tom;1;70;EN_TRATAMIENTO
