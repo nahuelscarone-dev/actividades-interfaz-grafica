@@ -10,8 +10,6 @@ package com.libreria.vistas;
  */
 public class ModalAltaLibro extends javax.swing.JDialog {
 
-    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(ModalAltaLibro.class.getName());
-
     /**
      * Creates new form ModalAltaLibro
      */
@@ -391,41 +389,37 @@ public class ModalAltaLibro extends javax.swing.JDialog {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton3ActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ReflectiveOperationException | javax.swing.UnsupportedLookAndFeelException ex) {
-            logger.log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
+    // Getters para que InventarioController lea los datos y escuche el guardado
+    public javax.swing.JTextField getTxtTitulo() {
+        return txtTitulo;
+    }
 
-        /* Create and display the dialog */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            @Override
-            public void run() {
-                ModalAltaLibro dialog = new ModalAltaLibro(new javax.swing.JFrame(), true);
-                dialog.addWindowListener(new java.awt.event.WindowAdapter() {
-                    @Override
-                    public void windowClosing(java.awt.event.WindowEvent e) {
-                        System.exit(0);
-                    }
-                });
-                dialog.setVisible(true);
-            }
-        });
+    public javax.swing.JTextField getTxtAutor() {
+        return txtAutor;
+    }
+
+    public javax.swing.JTextField getTxtNroArticulo() {
+        return txtNroArticulo;
+    }
+
+    public javax.swing.JTextField getTxtPrecio() {
+        return txtPrecio;
+    }
+
+    public javax.swing.JTextField getTxtCantidad() {
+        return txtCantidad;
+    }
+
+    public javax.swing.JComboBox<String> getCmbGenero() {
+        return cmbGenero;
+    }
+
+    public javax.swing.JButton getBtnGuardarLibroModal() {
+        return btnGuardarLibroModal;
+    }
+
+    public javax.swing.JButton getBtnCancelarModal() {
+        return btnCancelarModal;
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

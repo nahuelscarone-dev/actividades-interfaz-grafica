@@ -1,0 +1,88 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package com.libreria.modelo;
+
+/**
+ *
+ * @author Alumno
+ */
+public abstract class clsLibro {
+    
+    private String titulo;
+    private String autor;
+    private double precioBase;
+    private EstadoLibro estado;
+    private String isbn;
+    private String genero;
+
+    public clsLibro (String titulo, String autor, double precioBase)
+    {
+        this.titulo = titulo;
+        this.autor = autor;
+        this.precioBase = precioBase;
+    }
+
+    public String getTitulo() {
+        return titulo;
+    }
+
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
+    }
+
+    public String getAutor() {
+        return autor;
+    }
+
+    public void setAutor(String autor) {
+        this.autor = autor;
+    }
+
+    public double getPrecioBase() {
+        return precioBase;
+    }
+
+    public void setPrecioBase(double precioBase) {
+        this.precioBase = precioBase;
+    }
+    
+    public EstadoLibro getEstado() {
+        return estado;
+    }
+
+    public void setEstado(EstadoLibro estado) {
+        this.estado = estado;
+    }
+
+    public String getIsbn() {
+        return isbn;
+    }
+
+    public void setIsbn(String isbn) {
+        this.isbn = isbn;
+    }
+
+    public String getGenero() {
+        return genero;
+    }
+
+    public void setGenero(String genero) {
+        this.genero = genero;
+    }
+
+    public abstract String getTipo();
+
+    public void mostrarInfo()
+    {
+        System.out.println("Libro: " + this.titulo);
+        System.out.println("Autor: " + this.autor );
+    }
+    
+    public abstract double calcularPrecioFinal();
+    
+    public abstract void mostrarDetalle();
+    
+    public abstract boolean disponibleParaVenta();
+}

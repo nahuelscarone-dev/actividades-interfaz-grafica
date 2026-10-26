@@ -2,6 +2,8 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
+
+
 package com.libreria.vistas;
 
 /**
@@ -10,7 +12,10 @@ package com.libreria.vistas;
  */
 public class VentanaPrincipal extends javax.swing.JFrame {
     
-    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(VentanaPrincipal.class.getName());
+    private PanelVentas panelVentas;
+    private PanelCompras panelCompras;
+    private PanelInventario panelInventario;
+    private PanelEstadisticas panelEstadisticas;
 
     /**
      * Creates new form VentanaPrincipal
@@ -22,11 +27,11 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         this.setLocationRelativeTo(null); // Abre la ventana centrada en el monitor
         
         // Instancias de los paneles
-        PanelVentas panelVentas = new PanelVentas();
-        PanelCompras panelCompras = new PanelCompras();
-        PanelInventario panelInventario = new PanelInventario();
-        PanelEstadisticas panelEstadisticas = new PanelEstadisticas();
-        
+        panelVentas = new PanelVentas();
+        panelCompras = new PanelCompras();
+        panelInventario = new PanelInventario();
+        panelEstadisticas = new PanelEstadisticas();
+
         // Envolver todo el módulo de Estadísticas en un Scroll propio
         javax.swing.JScrollPane scrollEstadisticas = new javax.swing.JScrollPane(panelEstadisticas);
 
@@ -58,7 +63,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             // Disparar el texto inicial para la primera pestaña (Ventas)
             lblEstadoConexion.setText("<html><font color='#16a34a'>●</font> BD Conectada: <b>localhost:5432/libreria_db</b> &nbsp;&nbsp;|&nbsp;&nbsp; Usuario: <b>admin_inventario</b> &nbsp;&nbsp;|&nbsp;&nbsp; Módulo: <font color='#2563eb'><b>Ventas / Préstamos</b></font></html>");
             }
-
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -128,29 +133,9 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         System.exit(0);
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ReflectiveOperationException | javax.swing.UnsupportedLookAndFeelException ex) {
-            logger.log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(() -> new VentanaPrincipal().setVisible(true));
+    // Getters para que el controlador acceda a los paneles
+    public PanelInventario getPanelInventario() {
+        return panelInventario;
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
