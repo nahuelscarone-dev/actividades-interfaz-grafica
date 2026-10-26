@@ -20,6 +20,12 @@ public class clsLibroDeColeccion extends clsLibro{
     }
     
     @Override
+    public String getTipo()
+    {
+        return "De colección";
+    }
+
+    @Override
     public double calcularPrecioFinal()
     {
         double calculoRecargo = getPrecioBase() + (getPrecioBase() * (porcentajeRecargo / 100));

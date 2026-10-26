@@ -14,7 +14,9 @@ public abstract class clsLibro {
     private String autor;
     private double precioBase;
     private EstadoLibro estado;
-    
+    private String isbn;
+    private String genero;
+
     public clsLibro (String titulo, String autor, double precioBase)
     {
         this.titulo = titulo;
@@ -53,7 +55,25 @@ public abstract class clsLibro {
     public void setEstado(EstadoLibro estado) {
         this.estado = estado;
     }
-    
+
+    public String getIsbn() {
+        return isbn;
+    }
+
+    public void setIsbn(String isbn) {
+        this.isbn = isbn;
+    }
+
+    public String getGenero() {
+        return genero;
+    }
+
+    public void setGenero(String genero) {
+        this.genero = genero;
+    }
+
+    public abstract String getTipo();
+
     public void mostrarInfo()
     {
         System.out.println("Libro: " + this.titulo);

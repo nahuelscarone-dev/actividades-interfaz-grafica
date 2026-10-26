@@ -54,6 +54,12 @@ public class clsLibroFisico extends clsLibro {
     {
         return stock > 0;
     }
+
+    @Override
+    public String getTipo()
+    {
+        return "Físico";
+    }
 }
     
   

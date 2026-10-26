@@ -286,20 +286,7 @@ public class PanelInventario extends javax.swing.JPanel {
     }//GEN-LAST:event_btnPagAnteriorActionPerformed
 
     private void btnAbrirModalLibroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAbrirModalLibroActionPerformed
-        // TODO add your handling code here:
-        
-        // Obtener la ventana principal (el JFrame padre) para que el modal se centre sobre ella
-        java.awt.Window parentWindow = javax.swing.SwingUtilities.getWindowAncestor(this);
-
-        // Instanciar el nuevo modal
-        // Le pasamos el padre (si lo encuentra como Frame) y 'true' para que sea modal
-        ModalAltaLibro modal = new ModalAltaLibro((java.awt.Frame) parentWindow, true);
-
-        // Centrarlo exactamente en el medio del monitor
-        modal.setLocationRelativeTo(null); 
-
-        // Mostrarlo
-        modal.setVisible(true);
+        // La apertura del modal la maneja InventarioController
     }//GEN-LAST:event_btnAbrirModalLibroActionPerformed
 
     private void cmbGeneroFiltroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbGeneroFiltroActionPerformed
@@ -344,4 +331,33 @@ public class PanelInventario extends javax.swing.JPanel {
     private javax.swing.JTextField txtBuscarInventario;
     private javax.swing.JTextField txtPagActual;
     // End of variables declaration//GEN-END:variables
+
+    // Getters para que InventarioController acceda a los controles
+    public javax.swing.JTextField getTxtBuscarInventario() {
+        return txtBuscarInventario;
+    }
+
+    public javax.swing.JComboBox<String> getCmbTipoFiltro() {
+        return cmbTipoFiltro;
+    }
+
+    public javax.swing.JComboBox<String> getCmbGeneroFiltro() {
+        return cmbGeneroFiltro;
+    }
+
+    public javax.swing.JRadioButton getRbtnBajo() {
+        return rbtnBajo;
+    }
+
+    public javax.swing.JRadioButton getRbtnAgotado() {
+        return rbtnAgotado;
+    }
+
+    public javax.swing.JRadioButton getRbtnTodos() {
+        return rbtnTodos;
+    }
+
+    public javax.swing.JButton getBtnAbrirModalLibro() {
+        return btnAbrirModalLibro;
+    }
 }

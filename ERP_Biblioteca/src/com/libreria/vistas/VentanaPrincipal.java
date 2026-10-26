@@ -14,6 +14,11 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(VentanaPrincipal.class.getName());
 
+    private PanelVentas panelVentas;
+    private PanelCompras panelCompras;
+    private PanelInventario panelInventario;
+    private PanelEstadisticas panelEstadisticas;
+
     /**
      * Creates new form VentanaPrincipal
      */
@@ -24,11 +29,11 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         this.setLocationRelativeTo(null); // Abre la ventana centrada en el monitor
         
         // Instancias de los paneles
-        PanelVentas panelVentas = new PanelVentas();
-        PanelCompras panelCompras = new PanelCompras();
-        PanelInventario panelInventario = new PanelInventario();
-        PanelEstadisticas panelEstadisticas = new PanelEstadisticas();
-        
+        panelVentas = new PanelVentas();
+        panelCompras = new PanelCompras();
+        panelInventario = new PanelInventario();
+        panelEstadisticas = new PanelEstadisticas();
+
         // Envolver todo el módulo de Estadísticas en un Scroll propio
         javax.swing.JScrollPane scrollEstadisticas = new javax.swing.JScrollPane(panelEstadisticas);
 
@@ -153,6 +158,11 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(() -> new VentanaPrincipal().setVisible(true));
+    }
+
+    // Getters para que el controlador acceda a los paneles
+    public PanelInventario getPanelInventario() {
+        return panelInventario;
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

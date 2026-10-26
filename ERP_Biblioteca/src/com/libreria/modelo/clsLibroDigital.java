@@ -53,6 +53,11 @@ public class clsLibroDigital extends clsLibro implements Promocionable {
     }
 
     @Override
+    public String getTipo() {
+        return "Digital";
+    }
+
+    @Override
     public String getMotivoPromocion() {
         
         return "Promo Digital";

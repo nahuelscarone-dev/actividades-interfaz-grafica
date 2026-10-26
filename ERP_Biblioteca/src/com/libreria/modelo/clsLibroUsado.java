@@ -54,6 +54,11 @@ public class clsLibroUsado extends clsLibro implements Promocionable{
     }
 
     @Override
+    public String getTipo() {
+        return "Usado";
+    }
+
+    @Override
     public String getMotivoPromocion() {
         
         return "Libro Usado";
